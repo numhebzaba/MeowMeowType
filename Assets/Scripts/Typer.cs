@@ -3,18 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
+
 
 public class Typer : MonoBehaviour
 {
     public WordList wordList = null;
     public TMP_Text wordOutput = null;
-
     public TMP_Text nextWordOutput = null;
+    public TMP_Text wordTotalUI = null;
+    public TMP_Text TimeSpent = null;
+
+
+    public float accuracy = 0;
+    public int wordTotal = 0;
+    public TimeSpan delayTimeSpan = new TimeSpan(0, 0, 0);
 
     private string remainWord = string.Empty;
     private string currentWord = string.Empty;
     private string nextWord = string.Empty;
-
 
     void Start()
     {
@@ -40,6 +47,14 @@ public class Typer : MonoBehaviour
     void Update()
     {
         CheckInput();
+        if (!wordList.IsWordLeft() && IsWordComplete())
+            delayTimeSpan = delayTimeSpan;
+        else
+            delayTimeSpan += TimeSpan.FromSeconds(Time.deltaTime);
+
+        TimeSpent.text = delayTimeSpan.ToString();
+        wordTotalUI.text = "word :" + wordTotal.ToString();
+        
     }
     private void CheckInput()
     {
@@ -57,8 +72,11 @@ public class Typer : MonoBehaviour
         {
             RemoveLetter();
 
-            if(IsWordComplete())
+            if (IsWordComplete())
+            {
+                wordTotal = wordTotal + 1;
                 SetCurrentWord();
+            }
         }
     }
     private bool IsCorrectLetter(string letter)

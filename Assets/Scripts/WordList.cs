@@ -7,7 +7,16 @@ public class WordList : MonoBehaviour
 {
     private List<string> wordList = new List<string>()
     {
-        "Test","word","DdDAa","Cat","Meow"
+        "Test","Word","DdDAa","Cat"//,"Meow" ,"Zip","Steam","Stain","Uninterested","Uneven"
+        //,"Trot","Charge","Young","Synonymous","Eminent","Stereotyped","Lunch","Daily","Wilderness"
+        //,"Yard","Dance","Deep","Allow","Lace","Colossal","Boiling","Porter","Like","Fire","Tough"
+        //,"Dull","Kick","Stitch","Press","Houses","Look","Overt","Little","Step","Invite"
+        //,"Courageous","Murky","Invent","Clover","Arrive","Colossal","Whistle","Guard","Troubled","Easy"
+        //,"Momentous","Sneeze","Serious","Abashed","Heavy","General","Cent","Slip","Opposite"
+        //,"Loose","Harbor","Rhetorical","Gabby","Stomach","Mountainous","Cool","Elderly","Treatment","Plant","Pickle"
+        //,"Broad","Cushion","Grape","Hum","Turkey","Level","Learned","Knowledgeable","Frame"
+        //,"Wine","Thin","Simple","Telling","Horse","Ladybug","Abstracted","Hapless","Scarecrow","Tie","Cut"
+        //,"Absorbing","Different","Toad","Post","Horse","Understood","Complete","Phobic","Distinct","Worm","Functional"
     };
     private List<string> workingWords = new List<string>();
 
@@ -57,10 +66,19 @@ public class WordList : MonoBehaviour
         }
         return newWord;
     }
+    public bool IsWordLeft()
+    {
+        if (workingWords.Count == 0) 
+        {
+            return false;
+        }
+        return true;
+    }
     // Start is called before the first frame update
     void Start()
     {
         
+
     }
 
     // Update is called once per frame
