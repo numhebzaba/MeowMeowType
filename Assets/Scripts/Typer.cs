@@ -7,10 +7,14 @@ using TMPro;
 public class Typer : MonoBehaviour
 {
     public WordList wordList = null;
-    public TMP_Text wordOutput = null;   
-   
+    public TMP_Text wordOutput = null;
+
+    public TMP_Text nextWordOutput = null;
+
     private string remainWord = string.Empty;
     private string currentWord = string.Empty;
+    private string nextWord = string.Empty;
+
 
     void Start()
     {
@@ -20,11 +24,18 @@ public class Typer : MonoBehaviour
     {
         currentWord = wordList.getWord();
         SetRemainWord(currentWord);
+        nextWord = wordList.getNextWord();
+        SetNextRemainWord(nextWord);
     }
     private void SetRemainWord(string newString)
     {
         remainWord = newString;
         wordOutput.text = remainWord;
+    }
+    private void SetNextRemainWord(string newString)
+    {
+        nextWord = newString;
+        nextWordOutput.text = nextWord;
     }
     void Update()
     {

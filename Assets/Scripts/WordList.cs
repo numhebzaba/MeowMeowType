@@ -7,7 +7,7 @@ public class WordList : MonoBehaviour
 {
     private List<string> wordList = new List<string>()
     {
-        "Test","word","DDAS"
+        "Test","word","DdDAa","Cat","Meow"
     };
     private List<string> workingWords = new List<string>();
 
@@ -45,6 +45,16 @@ public class WordList : MonoBehaviour
             workingWords.Remove(newWord);
         }
 
+        return newWord;
+    }
+    public string getNextWord()
+    {
+        string newWord = string.Empty;
+
+        if (workingWords.Count >= 1)
+        {
+            newWord = workingWords[workingWords.Count - 1];
+        }
         return newWord;
     }
     // Start is called before the first frame update
