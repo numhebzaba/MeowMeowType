@@ -11,9 +11,9 @@ public class ListLetters
     private int Correct;
     private int Incorrect;
     private float accuracy;
-    private int Count;
+    private float Count;
 
-    public ListLetters(string name, float TimeAverage, float NewTime, int Count)
+    public ListLetters(string name, float TimeAverage, float NewTime, float Count)
     {
         this.name = name;
         this.TimeAverage = TimeAverage;
@@ -25,7 +25,7 @@ public class ListLetters
 
     public string GetAllData
     {
-        get { return this.name + " Correct: " + this.Correct + " Incorrect: " + this.Incorrect; }
+        get { return this.name + " Correct: " + this.Correct + " Incorrect: " + this.Incorrect + " Accuracy: " + (this.Correct/ this.Count)*100 + "%"; }
     }
 
     public string getName
@@ -33,7 +33,7 @@ public class ListLetters
         get { return name; }
     }
 
-    public int getCount
+    public float getCount
     {
         get { return Count; }
     }
@@ -51,6 +51,8 @@ public class ListLetters
     public void UpdateWrongLetterData()
     {
         this.Incorrect += 1;
+        this.Count += 1;
+
     }
 
     public void UpdateData()

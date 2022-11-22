@@ -134,7 +134,8 @@ public class Typer : MonoBehaviour
     {
         foreach (var letter in DataLetterList)
         {
-            if (keyinput.ToLower() == letter.getName)
+            string temp = remainWord.ToLower();
+            if (remainWord.Substring(0,1) == letter.getName)
             {
                 letter.UpdateWrongLetterData();
             }
