@@ -32,6 +32,7 @@ public class Typer : MonoBehaviour
     private string nextWord = string.Empty;
     public List<ListLetters> DataLetterList = new List<ListLetters>();
 
+    public animationStateControllerByType animationStateController;
 
     void Start()
     {
@@ -118,6 +119,7 @@ public class Typer : MonoBehaviour
         {
             CheckLetter(typedLetter);
             RemoveLetter();
+            animationStateController.animator.SetBool(animationStateController.isWalkingHash, true);
 
             if (IsWordComplete())
             {
@@ -132,6 +134,8 @@ public class Typer : MonoBehaviour
 
     private void IsFalse(string keyinput)
     {
+        animationStateController.animator.SetBool(animationStateController.isWalkingHash, false);
+
         foreach (var letter in DataLetterList)
         {
             string temp = remainWord.ToLower();
