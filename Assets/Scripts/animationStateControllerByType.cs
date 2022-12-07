@@ -6,6 +6,7 @@ public class animationStateControllerByType : MonoBehaviour
 {
     public Animator animator;
     public int isWalkingHash;
+    public int isSittingHash;
     public int isRunningHash;
 
 
@@ -14,6 +15,7 @@ public class animationStateControllerByType : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         isWalkingHash = Animator.StringToHash("isWalking");
+        isSittingHash = Animator.StringToHash("isSit");
         isRunningHash = Animator.StringToHash("isRunning");
         
 

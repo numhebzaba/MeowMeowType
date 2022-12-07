@@ -33,9 +33,13 @@ public class Typer : MonoBehaviour
     public List<ListLetters> DataLetterList = new List<ListLetters>();
 
     public animationStateControllerByType animationStateController;
+    public Animator BGanimator;
+
 
     void Start()
     {
+        // BGanimator = GetComponent<Animator>();
+        BGanimator.speed  = 0;
         SummaryUI.SetActive(false);
         SetCurrentWord();
         AddEngLetterlist();
@@ -60,7 +64,7 @@ public class Typer : MonoBehaviour
         nextWordOutput.text = nextWord;
     }
     void Update()
-    {
+    {   
         CheckInput();
 
         if (!wordList.IsWordLeft() && IsWordComplete())
@@ -119,6 +123,8 @@ public class Typer : MonoBehaviour
         {
             CheckLetter(typedLetter);
             RemoveLetter();
+            BGanimator.speed = 1; //play background animation//
+            animationStateController.animator.SetBool(animationStateController.isSittingHash, false);
             animationStateController.animator.SetBool(animationStateController.isWalkingHash, true);
 
             if (IsWordComplete())
@@ -134,7 +140,8 @@ public class Typer : MonoBehaviour
 
     private void IsFalse(string keyinput)
     {
-        animationStateController.animator.SetBool(animationStateController.isWalkingHash, false);
+        BGanimator.speed = 0; //Pause background animation//
+        animationStateController.animator.SetBool(animationStateController.isSittingHash, true);
 
         foreach (var letter in DataLetterList)
         {
@@ -159,6 +166,8 @@ public class Typer : MonoBehaviour
     {
         return remainWord.Length == 0;
     }
+
+    
 
     private void AddEngLetterlist()
     {
