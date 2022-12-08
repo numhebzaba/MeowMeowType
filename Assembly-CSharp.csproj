@@ -78,6 +78,7 @@
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
      <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+     <Compile Include="Assets\Scripts\SwitchScene.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\Ladymito\Free_cat\Animations\low_poly_cat_animation_list.txt" />
@@ -681,6 +682,10 @@
       <Project>{4dcc110c-9bdb-5041-dff3-1320da8d3c82}</Project>
       <Name>Unity.VisualScripting.Flow.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
+      <Project>{f34bdc35-c62e-1e36-3636-a2b3583c5870}</Project>
+      <Name>Boxophobic.Utils.Scripts</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VSCode.Editor.csproj">
       <Project>{179a2462-20c9-01ed-71fb-870ce9012d8f}</Project>
       <Name>Unity.VSCode.Editor</Name>
@@ -721,6 +726,10 @@
       <Project>{f85d918a-8a1e-fd85-fc5a-74219acc4002}</Project>
       <Name>Unity.VisualScripting.SettingsProvider.Editor</Name>
     </ProjectReference>
+    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
+      <Project>{6172f1c2-6f56-86c6-dbf2-2ad0e4465b46}</Project>
+      <Name>Boxophobic.Utils.Editor</Name>
+    </ProjectReference>
     <ProjectReference Include="Unity.VisualScripting.Flow.csproj">
       <Project>{8423a896-2c4e-5f0a-1fc0-cc9acfade67b}</Project>
       <Name>Unity.VisualScripting.Flow</Name>
@@ -752,14 +761,6 @@
     <ProjectReference Include="Boxophobic.SkyboxCubemapExtended.Editor.csproj">
       <Project>{5cc95ac1-2941-afa8-3a97-f4773a4b68c8}</Project>
       <Name>Boxophobic.SkyboxCubemapExtended.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Boxophobic.Utils.Editor.csproj">
-      <Project>{6172f1c2-6f56-86c6-dbf2-2ad0e4465b46}</Project>
-      <Name>Boxophobic.Utils.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="Boxophobic.Utils.Scripts.csproj">
-      <Project>{f34bdc35-c62e-1e36-3636-a2b3583c5870}</Project>
-      <Name>Boxophobic.Utils.Scripts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

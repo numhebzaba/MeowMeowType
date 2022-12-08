@@ -14,12 +14,12 @@ public class TestMoveOpject : MonoBehaviour
     private void Update() {
 
         if (m_Animator.GetBool("isSit"))
-            {
-                Debug.Log("SHAKE");
-                StartCoroutine(Shaking());
-                //If the "Crouch" parameter is enabled, disable it as the Animation should no longer be crouching
-                // m_Animator.SetBool("isWalking", false);
-            }
+        {
+            Debug.Log("SHAKE");
+            StartCoroutine(Shaking());
+            //If the "Crouch" parameter is enabled, disable it as the Animation should no longer be crouching
+            // m_Animator.SetBool("isWalking", false);
+        }
 
     }
 
